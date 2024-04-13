@@ -452,7 +452,7 @@ rightHandUpper = \relative {
   r4 r8 r16 <af ef'>( q4-.) |
   \clef bass ef2.->~ |
   ef2. |
-  \tuplet 3/2 { ef8( f ef } d ef af b |
+  \tuplet 3/2 { ef8( f ef } d ef af bf |
   c4) r r |
   
   \barNumberCheck 290
@@ -497,8 +497,10 @@ rightHandLower = \relative {
     
     \barNumberCheck 41
     s2. * 7 |
-    { s2. }
-    { s2. }
+    \alternative {
+      { s2. }
+      { s2. }
+    }
   }
   
   \barNumberCheck 50
