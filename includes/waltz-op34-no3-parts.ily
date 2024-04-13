@@ -33,7 +33,7 @@ rightHand = \relative {
   \clef treble
   <c' g' c>2.-> |
   q2.-> |
-  q4. c8 c4-> |
+  q4.-> c8 c4-> |
   q2.-> |
   \repeat unfold 4 { q4. c8 c4 | }
   
