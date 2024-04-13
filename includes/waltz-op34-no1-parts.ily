@@ -497,8 +497,10 @@ rightHandLower = \relative {
     
     \barNumberCheck 41
     s2. * 7 |
-    { s2. }
-    { s2. }
+    \alternative {
+      { s2. }
+      { s2. }
+    }
   }
   
   \barNumberCheck 50
