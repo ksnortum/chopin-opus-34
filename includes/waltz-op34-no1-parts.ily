@@ -31,7 +31,7 @@ slurShapeO = \shape #'((0 . 2) (0 . 1.5) (0 . 1) (0 . 0)) \etc
 slurShapeP = \shape #'((0 . 3) (0 . -1.5) (0 . -1) (0 . 0)) \etc
 slurShapeQ = \shape #'((0 . 2) (0 . -1) (0 . -1) (0 . 2)) \etc
 slurShapeR = \shape #'(
-                        ((0 . 0) (0 . 1) (0 . 1) (0 . 0))
+                        ((0 . 0) (0 . 2) (0 . 1) (0 . 0))
                         ((0 . 0) (0 . 0.5) (0 . 0) (0 . -1))
                         ) \etc
 slurShapeS = \shape #'((-1 . 1) (0 . 0) (0 . 0) (0 . 1)) \etc
@@ -46,13 +46,17 @@ slurShapeAA = \shape #'(
                         ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
                         ((0 . 1) (0 . 1) (0 . 0) (0 . 0))
                         ) \etc
-% slurShapeAB = \shape #'((0 . 2) (0 . 1) (0 . 1) (0 . 0)) \etc
 slurShapeAC = \shape #'((1.25 . 0) (1 . 1) (1 . 1) (1 . 0)) \etc
 slurShapeAD = \shape #'(
                          ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
                          ((0 . 0) (0 . -8) (0 . -7) (3 . 2))
                          ) \etc
 slurShapeAE = \shape #'((0 . 0) (0 . 0) (0 . 2) (0 . 3)) \etc
+slurShapeAF = \shape #'(
+                         ((0 . 0) (0 . 2.5) (0 . 0) (0 . 0))
+                         ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+                         ) \etc
+slurShapeAG = \shape #'((0 . 0) (0 . 1) (0 . 0) (0 . 0)) \etc
 
 beamPositionsA = \once \override Beam.positions = #'(2 . 0)
 
@@ -112,7 +116,7 @@ rightHandUpper = \relative {
     g8( df' ef g df' f |
     ef4\prall df8 g, f ef) |
     g,8( df' ef g df' f |
-    ef4\prall c8 af f ef) |
+    ef4-\trillUnderSlur \prall c8 af f ef) |
     g,8( df' ef g df' f |
     ef4\prall df8 g, f ef) |
     g,8( df' ef g df' g |
@@ -181,7 +185,7 @@ rightHandUpper = \relative {
   <gf bf>2^( <c, af'>4 |
   <gf' bf>4. <c, af'>8 \slashedGrace { c'8 } <gf bf>8. <c, af'>16 |
   <df f>4.)-\slurShapeD ( q8[ <f af> r16 <f df'>] |
-  <af f'>2) q4( |
+  <af f'>2) q4-\slurShapeAF ( |
   << { f'4 } \\ { af,8[ g] } >> <gf ef'>4\prall \stemDown <f d'> \stemNeutral |
   <gf ef'>4 <bf gf'> < af f'> |
   <gf ef'>4 <f df'> <e bf'> |
@@ -202,7 +206,7 @@ rightHandUpper = \relative {
   <gf bf>2^( <c, af'>4 |
   <gf' bf>4. <c, af'>8 \slashedGrace { c'8 } <gf bf>8. <c, af'>16 |
   <df f>4.)-\slurShapeH ( q8[ <f af> r16 <f df'>] |
-  <af f'>2) q4( |
+  <af f'>2) q4-\slurShapeAG ( |
   << { f'4 } \\ { af,8[ g] } >> <gf ef'>4\prall \stemDown <f d'> \stemNeutral |
   <gf ef'>4 <bf gf'> < af f'> |
   <gf ef'>4 <f df'> <e bf'> |
@@ -348,9 +352,6 @@ rightHandUpper = \relative {
   <af, af'>4) r af,,^>~ |
   
   \barNumberCheck 210
-  % af2 af'4^>~-\slurShapeAB ^( |
-%   af4 af8 af af4 |
-%   af-\tweak avoid-slur #'inside \trill g!8 af df ef |
   af2 af'4^>~^( |
   af4 af8 af af4 |
   % Prall, not trill: SrcB
@@ -1730,6 +1731,7 @@ tempi = {
 }
 
 forceBreaks = {
+  % page 1
   s2. * 6 \break\noPageBreak
   s2. * 7 \break\noPageBreak
   s2. * 7 \break\noPageBreak
@@ -1737,6 +1739,7 @@ forceBreaks = {
   \grace { s8 } s2. * 7 \break\noPageBreak
   s2. * 7 \pageBreak
   
+  % page 2
   s2. * 6 \break\noPageBreak
   s2. * 8 \break\noPageBreak
   s2. * 7 \break\noPageBreak
@@ -1744,6 +1747,7 @@ forceBreaks = {
   s2. * 6 \break\noPageBreak
   s2. * 6 \pageBreak
   
+  % page 3
   s2. * 7 \break\noPageBreak
   s2. * 6 \break\noPageBreak
   s2. * 6 \break\noPageBreak
@@ -1751,6 +1755,7 @@ forceBreaks = {
   s2. * 6 \break\noPageBreak
   s2. * 8 \pageBreak
   
+  % page 4
   s2. * 7 \break\noPageBreak
   s2. * 7 \break\noPageBreak
   s2. * 6 \break\noPageBreak
@@ -1758,18 +1763,21 @@ forceBreaks = {
   s2. * 7 \break\noPageBreak
   s2. * 6 \pageBreak
   
+  % page 5
   s2. * 6 \break\noPageBreak
   s2. * 6 \break\noPageBreak
   s2. * 6 \break\noPageBreak
   s2. * 8 \break\noPageBreak
   s2. * 7 \pageBreak
   
+  % page 6
   s2. * 6 \break\noPageBreak
   s2. * 6 \break\noPageBreak
   s2. * 7 \break\noPageBreak
   s2. * 6 \break\noPageBreak
   s2. * 6 \pageBreak
   
+  % page 7
   s2. * 6 \break\noPageBreak
   s2. * 6 \break\noPageBreak
   s2. * 6 \break\noPageBreak
@@ -1777,6 +1785,7 @@ forceBreaks = {
   s2. * 6 \break\noPageBreak
   s2. * 6 \pageBreak
   
+  % page 8
   s2. * 7 \break\noPageBreak
   s2. * 7 \break\noPageBreak
   s2. * 8 \break\noPageBreak

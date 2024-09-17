@@ -1178,6 +1178,7 @@ tempi = {
 }
 
 forceBreaks = {
+  % page 1
   s2. * 8 \break
   s2. * 10 \break
   s2. * 8 \break
@@ -1185,6 +1186,7 @@ forceBreaks = {
   s2. * 9 \break
   s2. * 9 \pageBreak
   
+  % page 2
   s2. * 10 \break
   \grace { s8 } s2. * 8 \break
   \grace { s8 } s2. * 9 \break
@@ -1192,6 +1194,7 @@ forceBreaks = {
   s2. * 7 \break
   s2. * 8 \pageBreak
   
+  % page 3
   s2. * 9 \break
   s2. * 8 \break
   s2. * 9 \break
@@ -1199,6 +1202,7 @@ forceBreaks = {
   \grace { s8 } s2. * 8 \break
   \grace { s8 } s2. * 9 \pageBreak
   
+  % page 4
   s2. * 9 \break
   s2. * 8 \break
   s2. * 7 \break

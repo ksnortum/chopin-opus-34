@@ -48,6 +48,7 @@ barLinesOn = {
   \undo \omit Score.SpanBar
 }
 
+trillUnderSlur = \tweak Script.avoid-slur #'inside \etc
 
 % Markup
 

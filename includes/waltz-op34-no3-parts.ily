@@ -20,6 +20,7 @@ moveClefA = \once {
   \override Score.Clef.X-extent = #'(0 . 0)
   \override Score.Clef.extra-offset = #'(-3 . 0)
 }
+moveTrillA = \once \override Staff.TrillSpanner.extra-offset = #'(0 . -1)
 
 %%% Music %%%
 
@@ -208,7 +209,7 @@ rightHand = \relative {
     c4-. |
   \afterGrace 7/8 b2.\startTrillSpan { as16[(\stopTrillSpan b]) } |
   c4-. e,8( f g4) |
-  b2.\startTrillSpan |
+  \moveTrillA b2.\startTrillSpan |
   bf!2. |
   
   \barNumberCheck 129
@@ -907,12 +908,14 @@ tempi = {
 }
 
 forceBreaks = {
+  % page 1
   s2. * 8 \break
   s2. * 6 \break
   s2. * 6 \break
   s2. * 6 \break
   s2. * 6 \pageBreak
   
+  % page 2
   s2. * 5 \break
   s2. * 5 \break
   s2. * 5 \break
@@ -920,6 +923,7 @@ forceBreaks = {
   s2. * 6 \break
   s2. * 6 \pageBreak
   
+  % page 3
   s2. * 6 \break
   s2. * 6 \break
   s2. * 6 \break
@@ -927,6 +931,7 @@ forceBreaks = {
   \grace { s8 } s2. * 6 \break
   s2. * 6 \pageBreak
   
+  % page 4
   \grace { s8 } s2. * 6 \break
   \grace { s8 } s2. * 6 \break
   \grace { s8 } s2. * 6 \break
@@ -934,6 +939,7 @@ forceBreaks = {
   s2. * 6 \break
   s2. * 5 \pageBreak
   
+  % page 5
   s2. * 5 \break
   s2. * 5 \break
   s2. * 6 \break
